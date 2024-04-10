@@ -1,0 +1,315 @@
+@charset "utf-8";
+
+
+/**HEY PROFESSOR TOOLE, THE MENU'S GRID STYLES ARE ON ITEMGRID.CSS**/
+
+
+
+
+
+
+/*--
+Background: just leave it white
+Main Text - Green: #00602b rgb(0, 96, 43)
+            sienna: #A0522D rgb(160, 82, 45)
+Accents - Yellow: #f9cb29  rgb(249, 203, 41)
+    Light Green: #00a769 rgb(0, 167, 105)
+    sienna: #A0522D rgb(160, 82, 45)
+--*/
+
+html {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    text-align: center;
+    color: #00602b;
+    background-color: lightgoldenrodyellow;
+    margin: 0 auto;
+    max-width: 1200px;
+        background-color: rgb(160, 82, 45, 0.5);
+
+}
+
+/* IMAGES */
+img {
+    max-width: 100%;
+}
+
+main {
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    color:#A0522D;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: .05em .05em .1em #f9cb29;
+}
+
+h2{
+    font:bold 1em arial, sans-serif;
+    text-transform: uppercase;
+    color: #A0522D;
+    letter-spacing: .4em;
+}
+
+dt {
+    font-weight: bold;
+    color: #00602b;
+}
+
+/*------- MENU STYLE-------*/
+
+#drinks, #treats {
+    background-color: rgb(0, 96, 43, .1);
+    border: 2px solid black;
+    padding: 5px 20px;
+    margin: 10px 20px;
+}
+
+.price {
+    font-style: italic;
+    color:#A0522D
+}
+
+/* ----------NAV STYLE--------- */
+.navbar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: #00602b;
+    padding: .3em;
+    margin: 0;
+}
+
+/* Styling nav links */
+.navbar a{
+    color:white;
+    padding: 60px 40px;
+    text-decoration: none;
+}
+
+/* hover style */
+.navbar a:hover {
+    background-color: white;
+    color:#00602b;
+}
+
+/* add logo, to one side */
+li.logo {
+    margin-right: auto;
+}
+
+/* HERO IMAGE */
+
+.hero{
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/coffee_shop.jpg);
+height: 500px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.hero_header{
+    text-align: left;
+    position: absolute;
+    color:white;
+    top: 40%;
+    text-shadow: .05em .05em .1em black;
+    font-size: 3em;
+    margin: 20px;
+}
+
+
+
+/* -----GRID STYLES------ */
+
+
+#grid {
+    display: grid;
+    grid-gap: 60px;
+    grid-template-columns: 100px 400px 100px;
+    grid-template-rows: 100px 400px 100px;
+    grid-template-areas:
+    "header     header      header"
+    "aside      main        sidebar"
+    "footer     footer      footer"
+    ;
+}
+
+#item1{
+    background-color: #d42c00;
+    font-size: 45px;
+    text-align: center;
+    color: black;
+    grid-area: header;
+}
+
+#item2{
+    background-color: #FD9855;
+    font-size: 45px;
+    text-align: center;
+    color: black;
+    grid-area: aside;
+}
+
+#item3{
+    background-color: whitesmoke;
+    font-size: 45px;
+    text-align: center;
+    color: black;
+    grid-area: main;
+}
+
+#item4{
+    background-color: #d161a2;
+    font-size: 45px;
+    text-align: center;
+    color: black;
+    grid-area: sidebar;
+
+}
+
+#item5{
+    background-color: #A20161;
+    font-size: 45px;
+    text-align: center;
+    color: black;
+    grid-area: footer;
+}
+
+
+
+
+/* -----INDEX GRID -----*/
+
+#index_grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+    "welcome welcome welcome"
+    "header header header"
+    "fair organic local"
+    "about about about"
+    "coffee pastry veg"
+    "bit bit bit"
+    ;
+}
+
+#welcome {
+    grid-area: welcome;
+}
+
+#header{
+    grid-area: header;
+}
+
+#fair{
+    grid-area: fair;
+}
+
+#organic{
+    grid-area: organic;
+}
+
+#local{
+    grid-area: local;
+}
+
+#about{
+    grid-area: about;
+}
+
+#coffee{
+    grid-area: coffee;
+}
+
+#pastry{
+    grid-area: pastry;
+}
+
+#veg{
+    grid-area: veg;
+}
+
+#bit{
+    grid-area: bit;
+}
+
+
+/*-----MEDIA QUERY-------*/
+
+
+/* double check max-width and min-width*/
+@media screen and (max-width: 800px) {
+
+    #index_grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(8,auto);
+        grid-template-areas:
+        "welcome welcome"
+        "header header"
+        "fair organic"
+        "local local"
+        "about about"
+        "coffee pastry"
+        "veg veg"
+        "bit bit"
+        ;
+        justify-items: center;
+    }
+    
+    #welcome{
+        margin: 0px 80px 0px 80px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    #index_grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10,auto);
+        grid-template-areas:
+        "welcome"
+        "header"
+        "fair"
+        "organic"
+        "local"
+        "about"
+        "coffee"
+        "pastry"
+        "veg"
+        "bit"
+        ;
+        justify-items: center;
+    }
+    
+.navbar a{
+    padding: 60px 20px;
+}
+
+#body{
+    font-size: 16px;
+}
+
+}
+
+@media screen and (min-width: 801px) {
+    #welcome{
+        padding: 0px 300px 0px 300px;
+    }    
+}
